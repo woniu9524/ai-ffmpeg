@@ -1,0 +1,60 @@
+{
+  "title": "AI FFmpeg Online · Simple Online Audio/Video Processing Tool",
+  "quote": "There's no audio/video problem that FFmpeg can't solve. If there is, it means your command isn't long enough.",
+  "quoteAuthor": "—Lu Xun",
+  "features": {
+    "videoTranscode": {
+      "title": "Video Transcoding",
+      "description": "Support multiple format conversions, such as MP4, WebM, etc."
+    },
+    "videoCompression": {
+      "title": "Video Compression",
+      "description": "Adjust bitrate and resolution to reduce file size"
+    },
+    "audioExtraction": {
+      "title": "Audio Extraction",
+      "description": "Extract audio files from video"
+    },
+    "videoCrop": {
+      "title": "Video Cropping",
+      "description": "Crop video duration and frame size"
+    },
+    "videoRotation": {
+      "title": "Video Rotation",
+      "description": "Rotate video orientation (90°/180°/270°)"
+    },
+    "basicEffects": {
+      "title": "Basic Effects",
+      "description": "Adjust basic parameters like brightness and contrast"
+    }
+  },
+  "uploader": {
+    "dragText": "Drag and drop video files here",
+    "orText": "or",
+    "browseText": "Browse Files",
+    "acceptedFiles": "Supported formats: MP4, AVI, MOV, MKV, WebM",
+    "maxSize": "Maximum file size: 500MB"
+  },
+  "processor": {
+    "currentVideo": "Current Video",
+    "reset": "Back to Selection",
+    "promptLabel": "Describe how you want to process the video",
+    "promptPlaceholder": "Example: trim first 10 seconds, add watermark, adjust resolution to 1080p",
+    "promptTip": "Tip: You can provide specific parameters like video duration, resolution, watermark position, etc.",
+    "generating": "Generating Command...",
+    "generateCommand": "Generate Command",
+    "generatedCommand": "Generated Command",
+    "clear": "Clear",
+    "commandDescription": "Command Description",
+    "processing": "Processing...",
+    "startProcessing": "Start Processing",
+    "progress": "Processing Progress",
+    "completed": "Processing Completed",
+    "downloadProcessed": "Download Processed Video",
+    "errors": {
+      "generateFailed": "Failed to generate command",
+      "processingFailed": "Video processing failed",
+      "error": "An error occurred"
+    }
+  }
+}

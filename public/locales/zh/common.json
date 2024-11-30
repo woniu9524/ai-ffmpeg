@@ -1,0 +1,60 @@
+{
+  "title": "AI FFmpeg Online · 简单的在线音视频处理工具",
+  "quote": "没有FFmpeg解决不了的音视频问题，如果有，说明你的命令还不够长。",
+  "quoteAuthor": "——鲁迅",
+  "features": {
+    "videoTranscode": {
+      "title": "视频转码",
+      "description": "支持多种格式转换，如MP4、WebM等"
+    },
+    "videoCompression": {
+      "title": "视频压缩",
+      "description": "调整码率和分辨率以减小文件体积"
+    },
+    "audioExtraction": {
+      "title": "音频提取",
+      "description": "从视频中提取音频文件"
+    },
+    "videoCrop": {
+      "title": "视频裁剪",
+      "description": "裁剪视频时长和画面大小"
+    },
+    "videoRotation": {
+      "title": "画面旋转",
+      "description": "旋转视频方向（90°/180°/270°）"
+    },
+    "basicEffects": {
+      "title": "基础特效",
+      "description": "调整亮度、对比度等基础参数"
+    }
+  },
+  "uploader": {
+    "dragText": "拖放视频文件到这里",
+    "orText": "或",
+    "browseText": "浏览文件",
+    "acceptedFiles": "支持的格式：MP4, AVI, MOV, MKV, WebM",
+    "maxSize": "最大文件大小：500MB"
+  },
+  "processor": {
+    "currentVideo": "当前处理视频",
+    "reset": "返回选择",
+    "promptLabel": "描述您想对视频进行的处理",
+    "promptPlaceholder": "例如：剪掉前10秒，添加水印，调整分辨率为1080p",
+    "promptTip": "提示：可以提供具体的参数，如视频时长、分辨率、水印位置等",
+    "generating": "生成命令中...",
+    "generateCommand": "生成处理命令",
+    "generatedCommand": "生成的命令",
+    "clear": "清除",
+    "commandDescription": "命令说明",
+    "processing": "处理中...",
+    "startProcessing": "开始处理",
+    "progress": "处理进度",
+    "completed": "处理完成",
+    "downloadProcessed": "下载处理后的视频",
+    "errors": {
+      "generateFailed": "生成命令失败",
+      "processingFailed": "视频处理失败",
+      "error": "发生错误"
+    }
+  }
+}

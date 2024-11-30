@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { VideoProcessor } from '@/components/video/VideoProcessor';
 import { VideoUploader } from '@/components/video/VideoUploader';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import {
   Video,
-  Scissors,
   Image,
   Volume2,
   Crop,
@@ -16,6 +17,7 @@ import {
 } from 'lucide-react';
 
 export default function HomePage() {
+  const { t } = useTranslation();
   const [videoFiles, setVideoFiles] = useState<File[]>([]);
   const [selectedVideoIndex, setSelectedVideoIndex] = useState<number>(-1);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -50,49 +52,50 @@ export default function HomePage() {
   const features = [
     {
       icon: <MonitorPlay className="w-5 h-5" />,
-      title: "视频转码",
-      description: "支持多种格式转换，如MP4、WebM等"
+      title: t('features.videoTranscode.title'),
+      description: t('features.videoTranscode.description')
     },
     {
       icon: <Image className="w-5 h-5" />,
-      title: "视频压缩",
-      description: "调整码率和分辨率以减小文件体积"
+      title: t('features.videoCompression.title'),
+      description: t('features.videoCompression.description')
     },
     {
       icon: <Volume2 className="w-5 h-5" />,
-      title: "音频提取",
-      description: "从视频中提取音频文件"
+      title: t('features.audioExtraction.title'),
+      description: t('features.audioExtraction.description')
     },
     {
       icon: <Crop className="w-5 h-5" />,
-      title: "视频裁剪",
-      description: "裁剪视频时长和画面大小"
+      title: t('features.videoCrop.title'),
+      description: t('features.videoCrop.description')
     },
     {
       icon: <RotateCw className="w-5 h-5" />,
-      title: "画面旋转",
-      description: "旋转视频方向（90°/180°/270°）"
+      title: t('features.videoRotation.title'),
+      description: t('features.videoRotation.description')
     },
     {
       icon: <Palette className="w-5 h-5" />,
-      title: "基础特效",
-      description: "调整亮度、对比度等基础参数"
+      title: t('features.basicEffects.title'),
+      description: t('features.basicEffects.description')
     }
   ];
 
   return (
     <main className='min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900'>
+      <LanguageSwitcher />
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
         <div className='text-center space-y-4 mb-12'>
           <div className='inline-flex items-center justify-center space-x-2 bg-blue-100 dark:bg-blue-900/30 rounded-full px-4 py-1'>
             <MonitorPlay className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-            <span className='text-sm text-blue-700 dark:text-blue-300'>AI FFmpeg Online · 简单的在线音视频处理工具</span>
+            <span className='text-sm text-blue-700 dark:text-blue-300'>{t('title')}</span>
           </div>
           <div className='max-w-2xl mx-auto'>
             <div className='flex items-start space-x-2 text-gray-600 dark:text-gray-400 text-sm italic bg-gray-50 dark:bg-gray-800/50 rounded-lg p-3'>
               <Quote className="w-4 h-4 flex-shrink-0 mt-0.5" />
-              <p>没有FFmpeg解决不了的音视频问题，如果有，说明你的命令还不够长。
-                <span className='text-gray-500 dark:text-gray-500 ml-2'>——鲁迅</span>
+              <p>{t('quote')}
+                <span className='text-gray-500 dark:text-gray-500 ml-2'>{t('quoteAuthor')}</span>
               </p>
             </div>
           </div>
