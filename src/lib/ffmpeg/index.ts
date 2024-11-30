@@ -38,8 +38,8 @@ export async function processVideo(
   onProgress?: (progress: number) => void
 ): Promise<Blob> {
   const ffmpeg = await getFFmpeg();
-  const inputFileName = 'input' + getFileExtension(videoFile.name);
-  const outputFileName = 'output' + getFileExtension(videoFile.name);
+  const inputFileName = encodeFileName(videoFile.name);
+  const outputFileName = 'output_' + encodeFileName(videoFile.name);
 
   try {
     // Write the input file to FFmpeg's virtual file system
@@ -78,6 +78,14 @@ export async function processVideo(
 function getFileExtension(filename: string): string {
   const match = filename.match(/\.[^.]*$/);
   return match ? match[0] : '';
+}
+
+function encodeFileName(filename: string): string {
+  // 使用时间戳和随机数生成唯一文件名
+  const timestamp = Date.now();
+  const random = Math.floor(Math.random() * 1000);
+  const extension = getFileExtension(filename);
+  return `file_${timestamp}_${random}${extension}`;
 }
 
 function parseFFmpegCommand(
