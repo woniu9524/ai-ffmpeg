@@ -7,12 +7,31 @@ import { useTranslation } from 'react-i18next';
 export function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const initialRender = useRef(true);
 
   const languages = [
-    { code: 'zh', name: '中文' },
-    { code: 'en', name: 'English' }
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'zh', name: '中文', flag: '🇨🇳' }
   ];
+
+  useEffect(() => {
+    setMounted(true);
+    if (initialRender.current) {
+      const savedLanguage = localStorage.getItem('language');
+      if (savedLanguage && savedLanguage !== i18n.language) {
+        i18n.changeLanguage(savedLanguage);
+      }
+      initialRender.current = false;
+    }
+  }, [i18n]);
+
+  useEffect(() => {
+    if (!initialRender.current) {
+      localStorage.setItem('language', i18n.language);
+    }
+  }, [i18n.language]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -30,16 +49,23 @@ export function LanguageSwitcher() {
     setIsOpen(false);
   };
 
+  if (!mounted) {
+    return null;
+  }
+
+  const currentLanguage = languages.find(lang => lang.code === i18n.language);
+
   return (
-    <div className="fixed top-4 right-4" ref={dropdownRef}>
+    <div className="fixed top-4 right-4 z-50" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 rounded-full bg-white/80 dark:bg-gray-800/80 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200 shadow-sm flex items-center gap-2"
         aria-label="Select Language"
       >
         <Globe className="w-5 h-5 text-gray-600 dark:text-gray-400" />
-        <span className="text-sm text-gray-600 dark:text-gray-400">
-          {languages.find(lang => lang.code === i18n.language)?.name}
+        <span className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
+          <span className="text-base">{currentLanguage?.flag}</span>
+          <span className="hidden sm:inline">{currentLanguage?.name}</span>
         </span>
       </button>
 
@@ -50,13 +76,14 @@ export function LanguageSwitcher() {
               <button
                 key={language.code}
                 onClick={() => handleLanguageChange(language.code)}
-                className={`block w-full text-left px-4 py-2 text-sm ${i18n.language === language.code
-                    ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                className={`block w-full text-left px-4 py-2 text-sm flex items-center gap-2 ${i18n.language === language.code
+                  ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
                   }`}
                 role="menuitem"
               >
-                {language.name}
+                <span className="text-base">{language.flag}</span>
+                <span>{language.name}</span>
               </button>
             ))}
           </div>

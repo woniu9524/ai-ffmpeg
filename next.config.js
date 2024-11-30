@@ -7,11 +7,6 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
-  i18n: {
-    defaultLocale: 'zh',
-    locales: ['zh', 'en'],
-  },
-
   // Uncoment to add domain whitelist
   // images: {
   //   remotePatterns: [

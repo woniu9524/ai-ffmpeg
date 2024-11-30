@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { VideoProcessor } from '@/components/video/VideoProcessor';
 import { VideoUploader } from '@/components/video/VideoUploader';
@@ -18,10 +18,20 @@ import {
 
 export default function HomePage() {
   const { t } = useTranslation();
+  const [mounted, setMounted] = useState(false);
   const [videoFiles, setVideoFiles] = useState<File[]>([]);
   const [selectedVideoIndex, setSelectedVideoIndex] = useState<number>(-1);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // 在客户端渲染之前返回加载状态或空白内容
+  if (!mounted) {
+    return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900" />;
+  }
 
   const handleFileSelect = (file: File) => {
     setVideoFiles(prev => {
