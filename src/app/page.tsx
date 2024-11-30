@@ -48,34 +48,34 @@ export default function HomePage() {
 
   const features = [
     {
-      icon: <Scissors className="w-5 h-5" />,
-      title: "剪辑与拼接",
-      description: "剪切、分割、合并视频片段"
+      icon: <MonitorPlay className="w-5 h-5" />,
+      title: "视频转码",
+      description: "支持多种格式转换，如MP4、WebM等"
     },
     {
       icon: <Image className="w-5 h-5" />,
-      title: "画面调整",
-      description: "调整分辨率、比例、帧率"
+      title: "视频压缩",
+      description: "调整码率和分辨率以减小文件体积"
     },
     {
       icon: <Volume2 className="w-5 h-5" />,
-      title: "音频处理",
-      description: "提取音频、调整音量、添加背景音乐"
+      title: "音频提取",
+      description: "从视频中提取音频文件"
     },
     {
       icon: <Crop className="w-5 h-5" />,
-      title: "裁剪与水印",
-      description: "裁剪画面、添加文字或图片水印"
+      title: "视频裁剪",
+      description: "裁剪视频时长和画面大小"
     },
     {
       icon: <RotateCw className="w-5 h-5" />,
-      title: "旋转与翻转",
-      description: "旋转视频角度、水平/垂直翻转"
+      title: "画面旋转",
+      description: "旋转视频方向（90°/180°/270°）"
     },
     {
       icon: <Palette className="w-5 h-5" />,
-      title: "滤镜特效",
-      description: "添加视频滤镜、转场特效"
+      title: "基础特效",
+      description: "调整亮度、对比度等基础参数"
     }
   ];
 
@@ -105,8 +105,8 @@ export default function HomePage() {
                   <div
                     key={index}
                     className={`flex items-center space-x-2 px-3 py-1.5 rounded-full text-sm ${selectedVideoIndex === index
-                        ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300'
-                        : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+                      ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300'
+                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
                       } cursor-pointer transition-colors duration-200`}
                     onClick={() => setSelectedVideoIndex(index)}
                   >
