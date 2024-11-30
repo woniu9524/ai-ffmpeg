@@ -1,132 +1,92 @@
 # AI-FFmpeg Video Processing Platform
 
-A web application that uses AI to generate FFmpeg commands from natural language descriptions and process videos directly in the browser using FFmpeg.wasm.
+<p align="center">
+  <img src="./public/logo.png" alt="AI-FFmpeg Logo" width="200"/>
+</p>
 
-[English](#features) | [中文说明](#功能特点)
+<div align="center">
 
-## Features
+[![GitHub license](https://img.shields.io/github/license/your-username/ai-ffmpeg)](https://github.com/your-username/ai-ffmpeg/blob/main/LICENSE)
+[![Node Version](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](https://nodejs.org)
 
-- Upload video files (supports MP4, AVI, MOV, MKV, WebM)
-- Natural language to FFmpeg command generation using OpenAI
-- Browser-based video processing using FFmpeg.wasm
-- Real-time processing progress
-- Preview and download processed videos
+[English](README.md) | [中文文档](doc/README-zh.md)
 
-## Prerequisites
+</div>
 
-- Node.js 18+ and npm/pnpm
-- OpenAI API key
+## Introduction
 
-## Getting Started
+This project is a web application based on FFmpeg.wasm that uses LLM to generate FFmpeg commands from natural language descriptions for video processing. It allows users to complete video processing tasks without being familiar with FFmpeg commands.
 
-1. Clone the repository:
-   \`\`\`bash
-   git clone https://github.com/yourusername/ai-ffmpeg.git
+## Core Features
+
+- 🎥 **Browser-side Video Processing**: Process videos directly in the browser using FFmpeg.wasm, no server required
+- 🤖 **AI Command Generation**: Convert natural language to professional FFmpeg commands using LLM
+- 📁 **Multiple Format Support**: Support for major video formats (MP4, AVI, MOV, MKV, WebM)
+- 🔄 **Real-time Progress**: Intuitive display of video processing progress
+- 👀 **Preview Function**: Instant preview after processing
+- 🌐 **Cross-platform Compatibility**: Support for all modern browsers
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: Next.js 14, React 18
+- **Styling**: Tailwind CSS
+- **Video Processing**: FFmpeg.wasm
+- **AI Integration**: OpenAI API
+- **Development Language**: TypeScript
+- **Package Manager**: pnpm
+
+## 📦 Installation & Deployment
+
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/woniu9524/ai-ffmpeg.git
    cd ai-ffmpeg
-   \`\`\`
+   ```
 
-2. Install dependencies:
-   \`\`\`bash
+2. **Install Dependencies**
+   ```bash
    pnpm install
-   \`\`\`
+   ```
 
-3. Create a \`.env.local\` file in the root directory and add your environment variables:
-   \`\`\`
-   OPENAI_API_KEY=your_openai_api_key_here
-   OPENAI_BASE_URL=your_openai_base_url_here # Optional: Custom OpenAI API base URL
-   AI_MODEL=gpt-3.5-turbo # Optional: Defaults to gpt-3.5-turbo
-   \`\`\`
+3. **Configure Environment Variables**
+   ```bash
+   cp .env.example .env.local
+   ```
+   Edit `.env.local` file:
+   ```
+   OPENAI_API_KEY=LLM Key
+   OPENAI_BASE_URL=Base URL
+   AI_MODEL=Model Name #qwen2.5-coder-3b-instruct is sufficient for the task
+   ```
 
-4. Start the development server:
-   \`\`\`bash
+4. **Start Development Server**
+   ```bash
    pnpm dev
-   \`\`\`
+   ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+## 🎯 Usage Guide
 
-## Usage
+1. Open the application webpage
+2. Add video files via drag-and-drop or clicking the upload area
+3. Describe your desired video processing effect in natural language
+4. Review and confirm the generated FFmpeg command
+5. Start processing and monitor progress
+6. Preview and download the processed video
 
-1. Upload a video file by dragging and dropping or clicking the upload area
-2. Enter a natural language description of the video processing task
-3. Click "Generate Command" to get the FFmpeg command
-4. Review the command and its description
-5. Click "Process Video" to execute the command
-6. Wait for processing to complete
-7. Preview and download the processed video
+## 💡 Use Cases
 
-## Technology Stack
+- **Video Compression**: Easily compress video file size
+- **Format Conversion**: Convert between different video formats
+- **Video Trimming**: Cut video segments
+- **Resolution Adjustment**: Change video size and quality
+- **Watermarking**: Add text or image watermarks to videos
+- **Video Merging**: Combine multiple video clips
+- **Audio Extraction**: Extract audio tracks from videos
 
-- Next.js 14
-- React 18
-- Tailwind CSS
-- FFmpeg.wasm
-- OpenAI API
-- TypeScript
+## 🙏 Acknowledgments
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (\`git checkout -b feature/amazing-feature\`)
-3. Commit your changes (\`git commit -m 'Add some amazing feature'\`)
-4. Push to the branch (\`git push origin feature/amazing-feature\`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Thanks to the FFmpeg.wasm team for their outstanding work
+- Thanks to QWEN for providing powerful API support
+- Thanks to Cursor for providing a powerful editor
 
 ---
-
-# AI-FFmpeg 视频处理平台
-
-一个基于 AI 的网页应用，可以通过自然语言描述生成 FFmpeg 命令，并直接在浏览器中使用 FFmpeg.wasm 处理视频。
-
-## 功能特点
-
-- 支持上传视频文件（支持 MP4、AVI、MOV、MKV、WebM 格式）
-- 使用 OpenAI 将自然语言转换为 FFmpeg 命令
-- 使用 FFmpeg.wasm 在浏览器中处理视频
-- 实时显示处理进度
-- 预览和下载处理后的视频
-
-## 环境要求
-
-- Node.js 18+ 和 npm/pnpm
-- OpenAI API 密钥
-
-## 快速开始
-
-1. 克隆仓库：
-   \`\`\`bash
-   git clone https://github.com/yourusername/ai-ffmpeg.git
-   cd ai-ffmpeg
-   \`\`\`
-
-2. 安装依赖：
-   \`\`\`bash
-   pnpm install
-   \`\`\`
-
-3. 在根目录创建 `.env.local` 文件并添加环境变量：
-   \`\`\`
-   OPENAI_API_KEY=你的_openai_api_密钥
-   OPENAI_BASE_URL=你的_openai_api_基础url # 可选：自定义 OpenAI API 基础 URL
-   AI_MODEL=gpt-3.5-turbo # 可选：默认为 gpt-3.5-turbo
-   \`\`\`
-
-4. 启动开发服务器：
-   \`\`\`bash
-   pnpm dev
-   \`\`\`
-
-5. 在浏览器中打开 [http://localhost:3000](http://localhost:3000)。
-
-## 使用方法
-
-1. 通过拖放或点击上传区域上传视频文件
-2. 输入视频处理任务的自然语言描述
-3. 点击"生成命令"获取 FFmpeg 命令
-4. 查看命令及其描述
-5. 点击"处理视频"执行命令
-6. 等待处理完成
-7. 预览并下载处理后的视频
