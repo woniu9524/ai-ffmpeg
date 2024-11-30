@@ -17,6 +17,10 @@
 
 本项目是基于FFmpeg.wasm的网页应用，通过自然语言描述由LLM来生成FFmpeg命令，从而实现视频处理。可以在不熟悉FFmpeg命令的情况下，方便的完成视频处理任务。
 
+## 🚀 在线演示
+
+在线体验地址：[https://ffmpeg-online.top/](https://ffmpeg-online.top/)
+
 ## ✨ 核心特性
 
 - 🎥 **浏览器端视频处理**：基于 FFmpeg.wasm，直接在浏览器中处理视频，无需服务器
