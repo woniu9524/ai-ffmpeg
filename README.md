@@ -79,7 +79,6 @@ This project is a web application based on FFmpeg.wasm that uses LLM to generate
 - **Format Conversion**: Convert between different video formats
 - **Video Trimming**: Cut video segments
 - **Resolution Adjustment**: Change video size and quality
-- **Watermarking**: Add text or image watermarks to videos
 - **Video Merging**: Combine multiple video clips
 - **Audio Extraction**: Extract audio tracks from videos
 
