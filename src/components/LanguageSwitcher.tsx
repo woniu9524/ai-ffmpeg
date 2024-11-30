@@ -12,8 +12,8 @@ export function LanguageSwitcher() {
   const initialRender = useRef(true);
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'zh', name: '中文', flag: '🇨🇳' }
+    { code: 'en', name: 'English' },
+    { code: 'zh', name: '中文' }
   ];
 
   useEffect(() => {
@@ -56,34 +56,32 @@ export function LanguageSwitcher() {
   const currentLanguage = languages.find(lang => lang.code === i18n.language);
 
   return (
-    <div className="fixed top-4 right-4 z-50" ref={dropdownRef}>
+    <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 rounded-full bg-white/80 dark:bg-gray-800/80 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200 shadow-sm flex items-center gap-2"
         aria-label="Select Language"
       >
         <Globe className="w-5 h-5 text-gray-600 dark:text-gray-400" />
-        <span className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
-          <span className="text-base">{currentLanguage?.flag}</span>
-          <span className="hidden sm:inline">{currentLanguage?.name}</span>
+        <span className="text-sm text-gray-600 dark:text-gray-400">
+          {currentLanguage?.name}
         </span>
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
+        <div className="absolute right-0 mt-2 w-24 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
           <div className="py-1" role="menu" aria-orientation="vertical">
             {languages.map((language) => (
               <button
                 key={language.code}
                 onClick={() => handleLanguageChange(language.code)}
-                className={`block w-full text-left px-4 py-2 text-sm flex items-center gap-2 ${i18n.language === language.code
+                className={`block w-full text-center px-3 py-2 text-sm ${i18n.language === language.code
                   ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
                   }`}
                 role="menuitem"
               >
-                <span className="text-base">{language.flag}</span>
-                <span>{language.name}</span>
+                {language.name}
               </button>
             ))}
           </div>
