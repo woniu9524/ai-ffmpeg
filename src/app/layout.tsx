@@ -2,13 +2,10 @@ import { Metadata } from 'next';
 import * as React from 'react';
 
 import '@/styles/globals.css';
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
 import '@/styles/colors.css';
 
 import { siteConfig } from '@/constant/config';
 
-// !STARTERCONF Change these default meta
-// !STARTERCONF Look at @/constant/config to change them
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -16,9 +13,26 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.title}`,
   },
   description: siteConfig.description,
-  robots: { index: true, follow: true },
-  // !STARTERCONF this is the default favicon, you can generate your own from https://realfavicongenerator.net/
-  // ! copy to /favicon folder
+  keywords: [
+    '音视频处理',
+    '视频转码',
+    '视频压缩',
+    '视频裁剪',
+    '音频提取',
+    'FFmpeg',
+    '在线工具',
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: '/favicon/favicon.ico',
     shortcut: '/favicon/favicon-16x16.png',
@@ -32,21 +46,21 @@ export const metadata: Metadata = {
     siteName: siteConfig.title,
     images: [`${siteConfig.url}/images/og.jpg`],
     type: 'website',
-    locale: 'en_US',
+    locale: 'zh_CN',
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
     images: [`${siteConfig.url}/images/og.jpg`],
-    // creator: '@th_clarence',
   },
-  // authors: [
-  //   {
-  //     name: 'Theodorus Clarence',
-  //     url: 'https://theodorusclarence.com',
-  //   },
-  // ],
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  verification: {
+    google: 'your-google-site-verification',
+    baidu: 'your-baidu-site-verification',
+  },
 };
 
 export default function RootLayout({
@@ -55,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html lang='zh-CN'>
       <body>{children}</body>
     </html>
   );
