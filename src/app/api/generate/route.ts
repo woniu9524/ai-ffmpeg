@@ -39,7 +39,7 @@ export async function POST(req: Request) {
       messages: [
         {
           role: 'system',
-          content: `You are an expert in FFmpeg video processing, specializing in ffmpeg.wasm commands for browser-based video processing.
+          content: `You are an expert in FFmpeg video processing
           
           Important notes:
           - Generate commands that are compatible with ffmpeg.wasm in the browser environment
@@ -47,8 +47,8 @@ export async function POST(req: Request) {
           - The description should be user-friendly and explain the effect in simple terms
           
           Return ONLY a valid JSON object with two properties:
-          1. command: The FFmpeg command to execute (must be ffmpeg.wasm compatible)
-          2. description: A simple, non-technical explanation of what changes will be made to the video
+          1. command: The FFmpeg command to execute
+          2. description: A simple, non-technical explanation of what changes will be made to the video.The language of the answer should be consistent with the language of the task
           
           The response must be a pure JSON object without any additional text or markdown formatting.
           Make sure the command is valid and safe to execute in the browser.`,

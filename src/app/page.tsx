@@ -81,23 +81,23 @@ export default function HomePage() {
 
   return (
     <main className='min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900'>
-      <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
-        <div className='text-center space-y-4 mb-8'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
+        <div className='text-center space-y-4 mb-12'>
           <div className='inline-flex items-center justify-center space-x-2 bg-blue-100 dark:bg-blue-900/30 rounded-full px-4 py-1'>
             <MonitorPlay className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-            <span className='text-sm text-blue-700 dark:text-blue-300'>FFmpeg 视频处理工具</span>
+            <span className='text-sm text-blue-700 dark:text-blue-300'>AI FFmpeg Online · 简单的在线音视频处理工具</span>
           </div>
           <div className='max-w-2xl mx-auto'>
             <div className='flex items-start space-x-2 text-gray-600 dark:text-gray-400 text-sm italic bg-gray-50 dark:bg-gray-800/50 rounded-lg p-3'>
               <Quote className="w-4 h-4 flex-shrink-0 mt-0.5" />
-              <p>所有视频处理的问题，都可以用FFmpeg解决。如果不行，说明你的命令行参数还不够长。
+              <p>没有FFmpeg解决不了的音视频问题，如果有，说明你的命令还不够长。
                 <span className='text-gray-500 dark:text-gray-500 ml-2'>——鲁迅</span>
               </p>
             </div>
           </div>
         </div>
 
-        <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-lg p-6 mb-8'>
+        <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12'>
           <div className='space-y-4'>
             {videoFiles.length > 0 && (
               <div className='flex flex-wrap gap-2 mb-4'>
@@ -139,18 +139,18 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className='grid grid-cols-2 lg:grid-cols-3 gap-4'>
+        <div className='grid grid-cols-2 lg:grid-cols-3 gap-6'>
           {features.map((feature, index) => (
             <div
               key={index}
-              className='group bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-lg p-4 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300'
+              className='group bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-lg p-6 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300'
             >
-              <div className='flex items-start space-x-3'>
-                <div className='flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300'>
+              <div className='flex items-start space-x-4'>
+                <div className='flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300'>
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className='font-medium text-gray-900 dark:text-white mb-1'>
+                  <h3 className='font-medium text-gray-900 dark:text-white mb-2'>
                     {feature.title}
                   </h3>
                   <p className='text-sm text-gray-600 dark:text-gray-400'>

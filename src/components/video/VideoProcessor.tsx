@@ -164,23 +164,38 @@ export function VideoProcessor({
         {command && (
           <div className='space-y-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg'>
             <div>
-              <h3 className='text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
-                生成的命令
-              </h3>
-              <pre className='p-3 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-x-auto text-sm font-mono'>
-                {command}
-              </pre>
+              <div className="flex justify-between items-center mb-2">
+                <h3 className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+                  生成的命令
+                </h3>
+                <button
+                  onClick={() => setCommand('')}
+                  className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                >
+                  清除
+                </button>
+              </div>
+              <div className="relative">
+                <textarea
+                  value={command}
+                  onChange={(e) => setCommand(e.target.value)}
+                  className='w-full p-4 bg-gray-900 dark:bg-black rounded-lg font-mono text-sm text-white dark:text-gray-100 resize-y min-h-[100px] focus:ring-1 focus:ring-blue-500 focus:border-transparent border border-gray-700 dark:border-gray-800'
+                  spellCheck="false"
+                />
+              </div>
             </div>
 
             <div>
               <h3 className='text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
                 命令说明
               </h3>
-              <p className='text-gray-600 dark:text-gray-400'>{description}</p>
+              <p className='text-gray-600 dark:text-gray-400 text-sm bg-gray-100 dark:bg-gray-900/50 p-4 rounded-lg'>
+                {description}
+              </p>
             </div>
 
             <button
-              className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:bg-gray-400 dark:disabled:bg-gray-600 transition-colors'
+              className='w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:bg-gray-400 dark:disabled:bg-gray-600 transition-colors'
               onClick={handleProcessVideo}
               disabled={isProcessing}
             >
@@ -215,24 +230,25 @@ export function VideoProcessor({
         )}
 
         {outputUrl && (
-          <div className='space-y-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg'>
-            <h3 className='text-lg font-medium text-gray-900 dark:text-white'>
-              处理完成
-            </h3>
-            <video
-              controls
-              className='w-full rounded-lg shadow-lg'
-              src={outputUrl}
-            />
-            <a
-              href={outputUrl}
-              download={`processed_${videoFile.name}`}
-              className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors'
-            >
-              <Download className='h-4 w-4 mr-2' />
-              下载处理后的视频
-            </a>
-          </div>
+            <div className='space-y-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg'>
+              <h3 className='text-lg font-medium text-gray-900 dark:text-white'>
+                处理完成
+              </h3>
+              <a
+                  href={outputUrl}
+                  download={`processed_${videoFile.name}`}
+                  className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors'
+              >
+                <Download className='h-4 w-4 mr-2'/>
+                下载处理后的视频
+              </a>
+              <video
+                  controls
+                  className='w-full rounded-lg shadow-lg'
+                  src={outputUrl}
+              />
+
+            </div>
         )}
       </div>
     </div>
