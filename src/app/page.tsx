@@ -119,15 +119,15 @@ export default function HomePage() {
         </a>
       </div>
 
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
-        <div className='text-center space-y-4 mb-12'>
-          <div className='inline-flex items-center justify-center space-x-2 bg-blue-100 dark:bg-blue-900/30 rounded-full px-4 py-1'>
-            <MonitorPlay className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-            <span className='text-sm text-blue-700 dark:text-blue-300'>{t('title')}</span>
+      <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-4 sm:py-8'>
+        <div className='text-center space-y-4 mb-8 sm:mb-12'>
+          <div className='inline-flex items-center justify-center space-x-2 bg-blue-100 dark:bg-blue-900/30 rounded-full px-3 sm:px-4 py-1'>
+            <MonitorPlay className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400" />
+            <span className='text-xs sm:text-sm text-blue-700 dark:text-blue-300'>{t('title')}</span>
           </div>
-          <div className='max-w-2xl mx-auto'>
-            <div className='flex items-start space-x-2 text-gray-600 dark:text-gray-400 text-sm italic bg-gray-50 dark:bg-gray-800/50 rounded-lg p-3'>
-              <Quote className="w-4 h-4 flex-shrink-0 mt-0.5" />
+          <div className='max-w-2xl mx-auto px-2 sm:px-0'>
+            <div className='flex items-start space-x-2 text-gray-600 dark:text-gray-400 text-xs sm:text-sm italic bg-gray-50 dark:bg-gray-800/50 rounded-lg p-2 sm:p-3'>
+              <Quote className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0 mt-0.5" />
               <p>{t('quote')}
                 <span className='text-gray-500 dark:text-gray-500 ml-2'>{t('quoteAuthor')}</span>
               </p>
@@ -135,21 +135,21 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12'>
+        <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-lg p-4 sm:p-8 mb-8 sm:mb-12'>
           <div className='space-y-4'>
             {videoFiles.length > 0 && (
               <div className='flex flex-wrap gap-2 mb-4'>
                 {videoFiles.map((file, index) => (
                   <div
                     key={index}
-                    className={`flex items-center space-x-2 px-3 py-1.5 rounded-full text-sm ${selectedVideoIndex === index
+                    className={`flex items-center space-x-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm ${selectedVideoIndex === index
                       ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300'
                       : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
                       } cursor-pointer transition-colors duration-200`}
                     onClick={() => setSelectedVideoIndex(index)}
                   >
-                    <Video className="w-4 h-4" />
-                    <span className='max-w-[150px] truncate'>{file.name}</span>
+                    <Video className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <span className='max-w-[100px] sm:max-w-[150px] truncate'>{file.name}</span>
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -179,21 +179,21 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className='grid grid-cols-2 lg:grid-cols-3 gap-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6'>
           {features.map((feature, index) => (
             <div
               key={index}
-              className='group bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-lg p-6 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300'
+              className='group bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-lg p-4 sm:p-6 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300'
             >
-              <div className='flex items-start space-x-4'>
-                <div className='flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300'>
+              <div className='flex items-start space-x-3 sm:space-x-4'>
+                <div className='flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300'>
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className='font-medium text-gray-900 dark:text-white mb-2'>
+                  <h3 className='font-medium text-sm sm:text-base text-gray-900 dark:text-white mb-1 sm:mb-2'>
                     {feature.title}
                   </h3>
-                  <p className='text-sm text-gray-600 dark:text-gray-400'>
+                  <p className='text-xs sm:text-sm text-gray-600 dark:text-gray-400'>
                     {feature.description}
                   </p>
                 </div>
