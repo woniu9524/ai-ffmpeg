@@ -19,6 +19,7 @@ export default function HomePage() {
   const [videoFiles, setVideoFiles] = useState<File[]>([]);
   const [selectedVideoIndex, setSelectedVideoIndex] = useState<number>(-1);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const handleFileSelect = (file: File) => {
     setVideoFiles(prev => {
@@ -133,7 +134,9 @@ export default function HomePage() {
                 videoFile={videoFiles[selectedVideoIndex]}
                 onReset={() => setSelectedVideoIndex(-1)}
                 isProcessing={isProcessing}
+                isGenerating={isGenerating}
                 setIsProcessing={setIsProcessing}
+                setIsGenerating={setIsGenerating}
               />
             )}
           </div>

@@ -6,14 +6,18 @@ interface VideoProcessorProps {
   videoFile: File;
   onReset: () => void;
   isProcessing: boolean;
-  setIsProcessing: (isProcessing: boolean) => void;
+  isGenerating: boolean;
+  setIsProcessing: (value: boolean) => void;
+  setIsGenerating: (value: boolean) => void;
 }
 
 export function VideoProcessor({
   videoFile,
   onReset,
   isProcessing,
+  isGenerating,
   setIsProcessing,
+  setIsGenerating
 }: VideoProcessorProps) {
   const [prompt, setPrompt] = useState('');
   const [command, setCommand] = useState('');
@@ -23,8 +27,8 @@ export function VideoProcessor({
   const [outputUrl, setOutputUrl] = useState<string | null>(null);
 
   const handleGenerateCommand = async () => {
+    setIsGenerating(true);
     try {
-      setIsProcessing(true);
       setError('');
       setOutputUrl(null);
 
@@ -54,13 +58,13 @@ export function VideoProcessor({
     } catch (err) {
       setError(err instanceof Error ? err.message : '发生错误');
     } finally {
-      setIsProcessing(false);
+      setIsGenerating(false);
     }
   };
 
   const handleProcessVideo = async () => {
+    setIsProcessing(true);
     try {
-      setIsProcessing(true);
       setError('');
       setProgress(0);
 
@@ -138,10 +142,10 @@ export function VideoProcessor({
 
         <button
           onClick={handleGenerateCommand}
-          disabled={isProcessing || !prompt}
-          className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-400 dark:disabled:bg-gray-600 transition-colors'
+          disabled={isGenerating}
+          className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-400 dark:disabled:bg-gray-600 transition-colors ${isGenerating ? 'opacity-50 cursor-not-allowed' : ''}`}
         >
-          {isProcessing ? (
+          {isGenerating ? (
             <>
               <Loader2 className='animate-spin -ml-1 mr-2 h-4 w-4' />
               生成命令中...
@@ -195,7 +199,7 @@ export function VideoProcessor({
             </div>
 
             <button
-              className='w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:bg-gray-400 dark:disabled:bg-gray-600 transition-colors'
+              className={`w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:bg-gray-400 dark:disabled:bg-gray-600 transition-colors ${isProcessing ? 'opacity-50 cursor-not-allowed' : ''}`}
               onClick={handleProcessVideo}
               disabled={isProcessing}
             >
@@ -230,25 +234,25 @@ export function VideoProcessor({
         )}
 
         {outputUrl && (
-            <div className='space-y-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg'>
-              <h3 className='text-lg font-medium text-gray-900 dark:text-white'>
-                处理完成
-              </h3>
-              <a
-                  href={outputUrl}
-                  download={`processed_${videoFile.name}`}
-                  className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors'
-              >
-                <Download className='h-4 w-4 mr-2'/>
-                下载处理后的视频
-              </a>
-              <video
-                  controls
-                  className='w-full rounded-lg shadow-lg'
-                  src={outputUrl}
-              />
+          <div className='space-y-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg'>
+            <h3 className='text-lg font-medium text-gray-900 dark:text-white'>
+              处理完成
+            </h3>
+            <a
+              href={outputUrl}
+              download={`processed_${videoFile.name}`}
+              className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors'
+            >
+              <Download className='h-4 w-4 mr-2' />
+              下载处理后的视频
+            </a>
+            <video
+              controls
+              className='w-full rounded-lg shadow-lg'
+              src={outputUrl}
+            />
 
-            </div>
+          </div>
         )}
       </div>
     </div>
