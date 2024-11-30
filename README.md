@@ -1,133 +1,74 @@
-# Next.js + Tailwind CSS + TypeScript Starter and Boilerplate
+# AI-FFmpeg Video Processing Platform
 
-<div align="center">
-  <h2>🔋 ts-nextjs-tailwind-starter</h2>
-  <p>Next.js + Tailwind CSS + TypeScript starter packed with useful development features.</p>
-  <p>Made by <a href="https://theodorusclarence.com">Theodorus Clarence</a></p>
-
-[![GitHub Repo stars](https://img.shields.io/github/stars/theodorusclarence/ts-nextjs-tailwind-starter)](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/stargazers)
-[![Depfu](https://badges.depfu.com/badges/fc6e730632ab9dacaf7df478a08684a7/overview.svg)](https://depfu.com/github/theodorusclarence/ts-nextjs-tailwind-starter?project_id=30160)
-[![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
-
-</div>
+A web application that uses AI to generate FFmpeg commands from natural language descriptions and process videos directly in the browser using FFmpeg.wasm.
 
 ## Features
 
-This repository is 🔋 battery packed with:
+- Upload video files (supports MP4, AVI, MOV, MKV, WebM)
+- Natural language to FFmpeg command generation using OpenAI
+- Browser-based video processing using FFmpeg.wasm
+- Real-time processing progress
+- Preview and download processed videos
 
-- ⚡️ Next.js 14 with App Router
-- ⚛️ React 18
-- ✨ TypeScript
-- 💨 Tailwind CSS 3 — Configured with CSS Variables to extend the **primary** color
-- 💎 Pre-built Components — Components that will **automatically adapt** with your brand color, [check here for the demo](https://tsnext-tw.thcl.dev/components)
-- 🃏 Jest — Configured for unit testing
-- 📈 Absolute Import and Path Alias — Import components using `@/` prefix
-- 📏 ESLint — Find and fix problems in your code, also will **auto sort** your imports
-- 💖 Prettier — Format your code consistently
-- 🐶 Husky & Lint Staged — Run scripts on your staged files before they are committed
-- 🤖 Conventional Commit Lint — Make sure you & your teammates follow conventional commit
-- ⏰ Release Please — Generate your changelog by activating the `release-please` workflow
-- 👷 Github Actions — Lint your code on PR
-- 🚘 Automatic Branch and Issue Autolink — Branch will be automatically created on issue **assign**, and auto linked on PR
-- 🔥 Snippets — A collection of useful snippets
-- 👀 Open Graph Helper Function — Awesome open graph generated using [og](https://github.com/theodorusclarence/og), fork it and deploy!
-- 🗺 Site Map — Automatically generate sitemap.xml
-- 📦 Expansion Pack — Easily install common libraries, additional components, and configs.
+## Prerequisites
 
-See the 👉 [feature details and changelog](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/blob/main/CHANGELOG.md) 👈 for more.
-
-You can also check all of the **details and demos** on my blog post:
-
-- [One-stop Starter to Maximize Efficiency on Next.js & Tailwind CSS Projects](https://theodorusclarence.com/blog/one-stop-starter)
+- Node.js 18+ and npm/pnpm
+- OpenAI API key
 
 ## Getting Started
 
-### 1. Clone this template using one of the three ways
+1. Clone the repository:
+   \`\`\`bash
+   git clone https://github.com/yourusername/ai-ffmpeg.git
+   cd ai-ffmpeg
+   \`\`\`
 
-1. Use this repository as template
+2. Install dependencies:
+   \`\`\`bash
+   pnpm install
+   \`\`\`
 
-   **Disclosure:** by using this repository as a template, there will be an attribution on your repository.
+3. Create a \`.env.local\` file in the root directory and add your environment variables:
+   \`\`\`
+   OPENAI_API_KEY=your_openai_api_key_here
+   OPENAI_BASE_URL=your_openai_base_url_here # Optional: Custom OpenAI API base URL
+   AI_MODEL=gpt-3.5-turbo # Optional: Defaults to gpt-3.5-turbo
+   \`\`\`
 
-   I'll appreciate if you do, so this template can be known by others too 😄
+4. Start the development server:
+   \`\`\`bash
+   pnpm dev
+   \`\`\`
 
-   ![Use as template](https://user-images.githubusercontent.com/55318172/129183039-1a61e68d-dd90-4548-9489-7b3ccbb35810.png)
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-2. Using `create-next-app`
+## Usage
 
-   ```bash
-   pnpm create next-app  -e https://github.com/theodorusclarence/ts-nextjs-tailwind-starter ts-pnpm
-   ```
+1. Upload a video file by dragging and dropping or clicking the upload area
+2. Enter a natural language description of the video processing task
+3. Click "Generate Command" to get the FFmpeg command
+4. Review the command and its description
+5. Click "Process Video" to execute the command
+6. Wait for processing to complete
+7. Preview and download the processed video
 
-   If you still want to use **pages directory** (_is not actively maintained_) you can use this command
+## Technology Stack
 
-   ```bash
-   npx create-next-app -e https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/tree/pages-directory project-name
-   ```
+- Next.js 14
+- React 18
+- Tailwind CSS
+- FFmpeg.wasm
+- OpenAI API
+- TypeScript
 
-3. Using `degit`
+## Contributing
 
-   ```bash
-   npx degit theodorusclarence/ts-nextjs-tailwind-starter YOUR_APP_NAME
-   ```
+1. Fork the repository
+2. Create your feature branch (\`git checkout -b feature/amazing-feature\`)
+3. Commit your changes (\`git commit -m 'Add some amazing feature'\`)
+4. Push to the branch (\`git push origin feature/amazing-feature\`)
+5. Open a Pull Request
 
-4. Deploy to Vercel
+## License
 
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter)
-
-### 2. Install dependencies
-
-It is encouraged to use **pnpm** so the husky hooks can work properly.
-
-```bash
-pnpm install
-```
-
-### 3. Run the development server
-
-You can start the server using this command:
-
-```bash
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.
-
-### 4. Change defaults
-
-There are some things you need to change including title, urls, favicons, etc.
-
-Find all comments with !STARTERCONF, then follow the guide.
-
-Don't forget to change the package name in package.json
-
-### 5. Commit Message Convention
-
-This starter is using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), it is mandatory to use it to commit changes.
-
-## Projects using ts-nextjs-tailwind-starter
-
-<!--
-TEMPLATE
-- [sitename](https://sitelink.com) ([Source](https://github.com/githublink))
-- [sitename](https://sitelink.com)
--->
-
-- [theodorusclarence.com](https://theodorusclarence.com) ([Source](https://github.com/theodorusclarence/theodorusclarence.com))
-- [Notiolink](https://notiolink.thcl.dev/) ([Source](https://github.com/theodorusclarence/notiolink))
-- [NextJs + Materia UI + Typescript](https://github.com/AlexStack/nextjs-materia-mui-typescript-hook-form-scaffold-boilerplate-starter)
-
-Are you using this starter? Please add your page (and repo) to the end of the list via a [Pull Request](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/edit/main/README.md). 😃
-
-## Expansion Pack 📦
-
-This starter is now equipped with an [expansion pack](https://github.com/theodorusclarence/expansion-pack).
-
-You can easily add expansion such as React Hook Form + Components, Storybook, and more just using a single command line.
-
-<https://user-images.githubusercontent.com/55318172/146631994-e1cac137-1664-4cfe-950b-a96decc1eaa6.mp4>
-
-Check out the [expansion pack repository](https://github.com/theodorusclarence/expansion-pack) for the commands
-
-### App Router Update
-
-Due to App Router update, the expansion pack is currently **outdated**. It will be updated in the future. You can still use them by copy and pasting the files.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
