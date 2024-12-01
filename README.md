@@ -2,21 +2,7 @@
 
 > 🎥 Free online video processing tool supporting video compression, speed adjustment, format conversion, and more. Process videos locally to protect privacy - no server upload needed. Use natural language AI chat to easily process videos without learning complex commands.
 
-**Key Features**: 
-- 🚀 Free Online Video Compression
-- 🔄 Video Speed Conversion (2x, 3x speed, etc.)
-- 📹 Video Format Conversion (MP4, AVI, MOV, MKV, WebM)
-- 🔒 Local Processing for Privacy - No Server Upload
-- 🤖 AI-Powered Processing with Natural Language
-- 💻 Cross-Platform Support for All Modern Browsers
 
-**Common Use Cases**:
-- Compress Large Video Files
-- Adjust Video Playback Speed
-- Convert Between Video Formats
-- Cut and Merge Videos
-- Extract Audio from Videos
-- Adjust Video Resolution and Quality
 
 <p align="center">
   <img src="public/logo.png" alt="AI-FFmpeg Logo" width="200"/>
@@ -47,6 +33,15 @@ Try it online: [https://ffmpeg-online.top/](https://ffmpeg-online.top/)
 - 🔄 **Real-time Progress**: Visual progress tracking for video processing
 - 👀 **Preview Function**: Instant preview after processing
 - 🌐 **Cross-platform**: Compatible with all modern browsers
+
+## 🎯 Common Use Cases
+
+- Compress Large Video Files
+- Adjust Video Playback Speed
+- Convert Between Video Formats
+- Cut and Merge Videos
+- Extract Audio from Videos
+- Adjust Video Resolution and Quality
 
 ## 🛠️ Tech Stack
 
