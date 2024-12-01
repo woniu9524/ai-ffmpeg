@@ -21,7 +21,7 @@ export function VideoUploader({ onFileSelect }: VideoUploaderProps) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      'video/*': ['.mp4', '.avi', '.mov', '.mkv', '.webm']
+      'video/*': []
     },
     maxSize: 500 * 1024 * 1024, // 500MB
     multiple: false
@@ -31,8 +31,8 @@ export function VideoUploader({ onFileSelect }: VideoUploaderProps) {
     <div
       {...getRootProps()}
       className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors duration-200 ${isDragActive
-          ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
-          : 'border-gray-300 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500'
+        ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
+        : 'border-gray-300 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500'
         }`}
     >
       <input {...getInputProps()} />

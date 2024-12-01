@@ -29,10 +29,10 @@
     }
   },
   "uploader": {
-    "dragText": "拖放视频文件到这里",
+    "dragText": "拖放视频文件到��里",
     "orText": "或",
     "browseText": "浏览文件",
-    "acceptedFiles": "支持的格式：MP4, AVI, MOV, MKV, WebM",
+    "acceptedFiles": "支持所有视频格式",
     "maxSize": "最大文件大小：500MB"
   },
   "processor": {

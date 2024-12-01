@@ -32,7 +32,7 @@
     "dragText": "Drag and drop video files here",
     "orText": "or",
     "browseText": "Browse Files",
-    "acceptedFiles": "Supported formats: MP4, AVI, MOV, MKV, WebM",
+    "acceptedFiles": "All video formats supported",
     "maxSize": "Maximum file size: 500MB"
   },
   "processor": {
