@@ -8,6 +8,13 @@ import JsonLd from './components/JsonLd'
 export const metadata: Metadata = {
   title: 'AI-FFmpeg | 免费在线视频处理工具 - 视频压缩、转换、倍速',
   description: '免费在线视频处理工具，支持视频压缩、倍速播放、格式转换等功能。无需上传到服务器，完全本地处理保护隐私。通过AI自然语言对话，轻松处理视频，无需学习复杂命令。Free online video processing tool with compression, speed adjustment, and format conversion. Process locally for privacy.',
+  manifest: '/manifest.json',
+  themeColor: '#000000',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'AI-FFmpeg',
+  },
   keywords: [
     // 中文关键词
     '在线视频处理',
@@ -60,7 +67,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-site-verification', // 需要替换为实际的Google验证码
+    google: 'your-google-site-verification', // 需要替换为实际��Google验证码
   },
   alternates: {
     canonical: 'https://ffmpeg-online.top',
@@ -85,15 +92,39 @@ export const metadata: Metadata = {
   },
 };
 
+// 注册Service Worker的函数
+const registerServiceWorker = () => {
+  if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then((registration) => {
+          console.log('ServiceWorker registration successful');
+        })
+        .catch((err) => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // 在客户端注册Service Worker
+  if (typeof window !== 'undefined') {
+    registerServiceWorker();
+  }
+
   return (
     <html lang="zh-CN">
       <head>
         <meta charSet="utf-8" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />

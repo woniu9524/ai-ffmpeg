@@ -1,0 +1,86 @@
+{
+  "name": "AI-FFmpeg",
+  "short_name": "AI-FFmpeg",
+  "description": "免费在线视频处理工具，支持视频压缩、倍速播放、格式转换等功能",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "视频压缩",
+      "short_name": "压缩",
+      "description": "快速压缩视频文件",
+      "url": "/?action=compress",
+      "icons": [
+        {
+          "src": "/icons/compress.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "视频倍速",
+      "short_name": "倍速",
+      "description": "调整视频播放速度",
+      "url": "/?action=speed",
+      "icons": [
+        {
+          "src": "/icons/speed.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
