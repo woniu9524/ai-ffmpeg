@@ -1,7 +1,25 @@
-# AI-FFmpeg Video Processing Platform
+# AI-FFmpeg: Free Online Video Processing Platform | Video Compression & Conversion Tool
+
+> 🎥 Free online video processing tool supporting video compression, speed adjustment, format conversion, and more. Process videos locally to protect privacy - no server upload needed. Use natural language AI chat to easily process videos without learning complex commands.
+
+**Key Features**: 
+- 🚀 Free Online Video Compression
+- 🔄 Video Speed Conversion (2x, 3x speed, etc.)
+- 📹 Video Format Conversion (MP4, AVI, MOV, MKV, WebM)
+- 🔒 Local Processing for Privacy - No Server Upload
+- 🤖 AI-Powered Processing with Natural Language
+- 💻 Cross-Platform Support for All Modern Browsers
+
+**Common Use Cases**:
+- Compress Large Video Files
+- Adjust Video Playback Speed
+- Convert Between Video Formats
+- Cut and Merge Videos
+- Extract Audio from Videos
+- Adjust Video Resolution and Quality
 
 <p align="center">
-  <img src="./public/logo.png" alt="AI-FFmpeg Logo" width="200"/>
+  <img src="public/logo.png" alt="AI-FFmpeg Logo" width="200"/>
 </p>
 
 <div align="center">
@@ -13,30 +31,30 @@
 
 </div>
 
+## 🚀 Introduction
+
+AI-FFmpeg is a web application based on FFmpeg.wasm that uses natural language processing to generate FFmpeg commands for video processing. It allows users to process videos easily without knowing complex FFmpeg commands.
+
 ## 🚀 Online Demo
 
-Try out the online demo at: [https://ffmpeg-online.top/](https://ffmpeg-online.top/)
+Try it online: [https://ffmpeg-online.top/](https://ffmpeg-online.top/)
 
-## Introduction
+## ✨ Core Features
 
-This project is a web application based on FFmpeg.wasm that uses LLM to generate FFmpeg commands from natural language descriptions for video processing. It allows users to complete video processing tasks without being familiar with FFmpeg commands.
-
-## Core Features
-
-- 🎥 **Browser-side Video Processing**: Process videos directly in the browser using FFmpeg.wasm, no server required
-- 🤖 **AI Command Generation**: Convert natural language to professional FFmpeg commands using LLM
-- 📁 **Multiple Format Support**: Support for major video formats (MP4, AVI, MOV, MKV, WebM)
-- 🔄 **Real-time Progress**: Intuitive display of video processing progress
+- 🎥 **Browser-based Processing**: Process videos directly in your browser using FFmpeg.wasm
+- 🤖 **AI Command Generation**: Convert natural language to professional FFmpeg commands
+- 📁 **Multi-format Support**: Support for major video formats (MP4, AVI, MOV, MKV, WebM)
+- 🔄 **Real-time Progress**: Visual progress tracking for video processing
 - 👀 **Preview Function**: Instant preview after processing
-- 🌐 **Cross-platform Compatibility**: Support for all modern browsers
+- 🌐 **Cross-platform**: Compatible with all modern browsers
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework**: Next.js 14, React 18
+- **Frontend**: Next.js 14, React 18
 - **Styling**: Tailwind CSS
 - **Video Processing**: FFmpeg.wasm
 - **AI Integration**: OpenAI API
-- **Development Language**: TypeScript
+- **Language**: TypeScript
 - **Package Manager**: pnpm
 
 ## 📦 Installation & Deployment
@@ -52,15 +70,15 @@ This project is a web application based on FFmpeg.wasm that uses LLM to generate
    pnpm install
    ```
 
-3. **Configure Environment Variables**
+3. **Configure Environment**
    ```bash
    cp .env.example .env.local
    ```
-   Edit `.env.local` file:
+   Edit `.env.local`:
    ```
-   OPENAI_API_KEY=LLM Key
-   OPENAI_BASE_URL=Base URL
-   AI_MODEL=Model Name #qwen2.5-coder-3b-instruct is sufficient for the task
+   OPENAI_API_KEY=your_llm_key
+   OPENAI_BASE_URL=base_url
+   AI_MODEL=model_name #qwen2.5-coder-3b-instruct is sufficient
    ```
 
 4. **Start Development Server**
@@ -70,16 +88,16 @@ This project is a web application based on FFmpeg.wasm that uses LLM to generate
 
 ## 🎯 Usage Guide
 
-1. Open the application webpage
-2. Add video files via drag-and-drop or clicking the upload area
-3. Describe your desired video processing effect in natural language
+1. Open the web application
+2. Upload video by drag-and-drop or clicking
+3. Describe your desired video processing in natural language
 4. Review and confirm the generated FFmpeg command
 5. Start processing and monitor progress
 6. Preview and download the processed video
 
 ## 💡 Use Cases
 
-- **Video Compression**: Easily compress video file size
+- **Video Compression**: Easily reduce video file size
 - **Format Conversion**: Convert between different video formats
 - **Video Trimming**: Cut video segments
 - **Resolution Adjustment**: Change video size and quality
@@ -88,8 +106,8 @@ This project is a web application based on FFmpeg.wasm that uses LLM to generate
 
 ## 🙏 Acknowledgments
 
-- Thanks to the FFmpeg.wasm team for their outstanding work
-- Thanks to QWEN for providing powerful API support
-- Thanks to Cursor for providing a powerful editor
+- Thanks to the FFmpeg.wasm team for their excellent work
+- Thanks to QWEN for powerful API support
+- Thanks to Cursor for the powerful editor
 
 ---
