@@ -23,7 +23,7 @@ export function VideoUploader({ onFileSelect }: VideoUploaderProps) {
     accept: {
       'video/*': []
     },
-    maxSize: 500 * 1024 * 1024, // 500MB
+    maxSize: 2 * 1024 * 1024 * 1024, // 2GB
     multiple: false
   });
 

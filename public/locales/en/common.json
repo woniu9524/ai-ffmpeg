@@ -32,8 +32,8 @@
     "dragText": "Drag and drop video files here",
     "orText": "or",
     "browseText": "Browse Files",
-    "acceptedFiles": "All video formats supported",
-    "maxSize": "Maximum file size: 500MB"
+    "acceptedFiles": "Many video formats supported",
+    "maxSize": "Maximum file size: 2GB"
   },
   "processor": {
     "currentVideo": "Current Video",
