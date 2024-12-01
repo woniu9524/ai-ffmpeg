@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ffmpeg-online.top
+
+# Sitemaps
+Sitemap: https://ffmpeg-online.top/sitemap.xml
