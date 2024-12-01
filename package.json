@@ -21,6 +21,7 @@
     "@ffmpeg/ffmpeg": "^0.12.10",
     "@ffmpeg/util": "^0.12.1",
     "@microsoft/fetch-event-source": "^2.0.1",
+    "@next/third-parties": "^15.0.3",
     "ai": "^2.2.36",
     "clsx": "^2.0.0",
     "i18next": "^23.7.11",
