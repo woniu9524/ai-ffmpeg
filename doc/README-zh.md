@@ -2,26 +2,6 @@
 
 > 🎥 免费在线视频处理工具，支持视频压缩、倍速播放、格式转换等功能。无需上传到服务器，完全本地处理保护隐私。通过AI自然语言对话，轻松处理视频，无需学习复杂命令。
 
-**关键功能**: 
-- 🚀 免费在线视频压缩
-- 🔄 视频倍速转换（支持2倍速、3倍速等）
-- 📹 视频格式转换（MP4、AVI、MOV、MKV、WebM）
-- 🔒 本地处理保护隐私，无需上传服务器
-- 🤖 AI智能处理，用自然语言描述需求
-- 💻 跨平台支持，支持所有现代浏览器
-
-**常见使用场景**:
-- 视频文件太大需要压缩
-- 视频播放速度调整（加速/减速）
-- 不同格式视频转换
-- 视频剪辑和合并
-- 提取视频音频
-- 调整视频分辨率和画质
-
-<p align="center">
-  <img src="../public/logo.png" alt="AI-FFmpeg Logo" width="200"/>
-</p>
-
 <div align="center">
 
 [![GitHub license](https://img.shields.io/github/license/your-username/ai-ffmpeg)](https://github.com/your-username/ai-ffmpeg/blob/main/LICENSE)
@@ -30,6 +10,12 @@
 [English](../README.md) | [中文文档](README-zh.md)
 
 </div>
+
+
+<p align="center">
+  <img src="../public/logo.png" alt="AI-FFmpeg Logo" width="200"/>
+</p>
+
 
 ## 🚀 项目介绍
 
@@ -47,6 +33,15 @@
 - 🔄 **实时进度显示**：直观展示视频处理进度
 - 👀 **预览功能**：处理完成后即时预览效果
 - 🌐 **跨平台兼容**：支持所有现代浏览器
+
+
+## 🎯 常见使用场景
+- 视频文件太大需要压缩
+- 视频播放速度调整（加速/减速）
+- 不同格式视频转换
+- 视频剪辑和合并
+- 提取视频音频
+- 调整视频分辨率和画质
 
 ## 🛠️ 技术栈
 

@@ -29,6 +29,7 @@ export function VideoProcessor({
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState('');
   const [outputUrl, setOutputUrl] = useState<string | null>(null);
+  const [outputFileName, setOutputFileName] = useState<string>('');
 
   const handleGenerateCommand = async () => {
     setIsGenerating(true);
@@ -72,7 +73,7 @@ export function VideoProcessor({
       setError('');
       setProgress(0);
 
-      const processedVideo = await processVideo(
+      const { blob: processedVideo, outputFileName } = await processVideo(
         videoFile,
         command,
         (progress) => {
@@ -82,6 +83,7 @@ export function VideoProcessor({
 
       const url = URL.createObjectURL(processedVideo);
       setOutputUrl(url);
+      setOutputFileName(outputFileName);
     } catch (err) {
       setError(err instanceof Error ? err.message : t('processor.errors.processingFailed'));
     } finally {
@@ -244,7 +246,7 @@ export function VideoProcessor({
             </h3>
             <a
               href={outputUrl}
-              download={`processed_${videoFile.name}`}
+              download={outputFileName || videoFile.name}
               className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors'
             >
               <Download className='h-4 w-4 mr-2' />

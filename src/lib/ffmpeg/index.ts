@@ -36,10 +36,10 @@ export async function processVideo(
   videoFile: File,
   command: string,
   onProgress?: (progress: number) => void
-): Promise<Blob> {
+): Promise<{ blob: Blob; outputFileName: string }> {
   const ffmpeg = await getFFmpeg();
   const inputFileName = encodeFileName(videoFile.name);
-  const outputFileName = 'output_' + encodeFileName(videoFile.name);
+  const outputFileName = getOutputFileName(command, videoFile.name);
 
   try {
     // Write the input file to FFmpeg's virtual file system
@@ -68,7 +68,7 @@ export async function processVideo(
     await ffmpeg.deleteFile(inputFileName);
     await ffmpeg.deleteFile(outputFileName);
 
-    return blob;
+    return { blob, outputFileName: getOriginalOutputFileName(command, videoFile.name) };
   } catch (error) {
     console.error('Error processing video:', error);
     throw new Error('Failed to process video');
@@ -105,4 +105,22 @@ function parseFFmpegCommand(
       .match(/(?:[^\s"']+|"[^"]*"|'[^']*')+/g)
       ?.map((part) => part.replace(/^["']|["']$/g, '')) || []
   );
+}
+
+function getOutputFileName(command: string, originalFileName: string): string {
+  // 从命令中提取输出文件名
+  const match = command.match(/\s+["']?([^"'\s]+)["']?\s*$/);
+  if (match) {
+    return encodeFileName(match[1]);
+  }
+  return 'output_' + encodeFileName(originalFileName);
+}
+
+function getOriginalOutputFileName(command: string, originalFileName: string): string {
+  // 从命令中提取原始输出文件名
+  const match = command.match(/\s+["']?([^"'\s]+)["']?\s*$/);
+  if (match) {
+    return match[1];
+  }
+  return 'output_' + originalFileName;
 }
