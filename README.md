@@ -13,7 +13,7 @@
 [![GitHub license](https://img.shields.io/github/license/your-username/ai-ffmpeg)](https://github.com/your-username/ai-ffmpeg/blob/main/LICENSE)
 [![Node Version](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](https://nodejs.org)
 
-[English](README.md) | [中文文档](doc/README-zh.md)
+[English](README.md) | [中文文档](doc/README-zh.md) | [日本語](doc/README-ja.md)
 
 </div>
 
