@@ -1,0 +1,60 @@
+{
+  "title": "AI FFmpeg Online · シンプルなオンライン音声/動画処理ツール",
+  "quote": "FFmpegで解決できない音声/動画の問題はありません。もしあるとすれば、それはコマンドがまだ十分に長くないということです。",
+  "quoteAuthor": "—魯迅",
+  "features": {
+    "videoTranscode": {
+      "title": "動画変換",
+      "description": "MP4、WebMなど、複数のフォーマット変換に対応"
+    },
+    "videoCompression": {
+      "title": "動画圧縮",
+      "description": "ビットレートと解像度を調整してファイルサイズを削減"
+    },
+    "audioExtraction": {
+      "title": "音声抽出",
+      "description": "動画から音声ファイルを抽出"
+    },
+    "videoCrop": {
+      "title": "動画トリミング",
+      "description": "動画の長さとフレームサイズを調整"
+    },
+    "videoRotation": {
+      "title": "動画回転",
+      "description": "動画の向きを回転（90°/180°/270°）"
+    },
+    "basicEffects": {
+      "title": "基本エフェクト",
+      "description": "明るさ、コントラストなどの基本パラメータを調整"
+    }
+  },
+  "uploader": {
+    "dragText": "ここに動画ファイルをドラッグ＆ドロップ",
+    "orText": "または",
+    "browseText": "ファイルを参照",
+    "acceptedFiles": "多様な動画フォーマットに対応",
+    "maxSize": "最大ファイルサイズ：2GB"
+  },
+  "processor": {
+    "currentVideo": "現在の動画",
+    "reset": "選択に戻る",
+    "promptLabel": "動画の処理方法を説明してください",
+    "promptPlaceholder": "例：最初の10秒をカット、解像度を1080pに調整",
+    "promptTip": "ヒント：動画の長さ、解像度などの具体的なパラメータを指定できます",
+    "generating": "コマンド生成中...",
+    "generateCommand": "コマンドを生成",
+    "generatedCommand": "生成されたコマンド",
+    "clear": "クリア",
+    "commandDescription": "コマンドの説明",
+    "processing": "処理中...",
+    "startProcessing": "処理開始",
+    "progress": "処理進捗",
+    "completed": "処理完了",
+    "downloadProcessed": "処理済み動画をダウンロード",
+    "errors": {
+      "generateFailed": "コマンド生成に失敗しました",
+      "processingFailed": "動画処理に失敗しました",
+      "error": "エラーが発生しました"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "title": "AI FFmpeg Online · Outil simple de traitement audio/vidéo en ligne",
+  "quote": "Il n'y a pas de problème audio/vidéo que FFmpeg ne peut pas résoudre. S'il y en a un, c'est que votre commande n'est pas assez longue.",
+  "quoteAuthor": "—Lu Xun",
+  "features": {
+    "videoTranscode": {
+      "title": "Transcodage vidéo",
+      "description": "Prise en charge de plusieurs formats de conversion, comme MP4, WebM, etc."
+    },
+    "videoCompression": {
+      "title": "Compression vidéo",
+      "description": "Ajustez le débit et la résolution pour réduire la taille du fichier"
+    },
+    "audioExtraction": {
+      "title": "Extraction audio",
+      "description": "Extraire des fichiers audio de la vidéo"
+    },
+    "videoCrop": {
+      "title": "Recadrage vidéo",
+      "description": "Ajuster la durée et la taille du cadre de la vidéo"
+    },
+    "videoRotation": {
+      "title": "Rotation vidéo",
+      "description": "Rotation de l'orientation vidéo (90°/180°/270°)"
+    },
+    "basicEffects": {
+      "title": "Effets de base",
+      "description": "Ajuster les paramètres de base comme la luminosité et le contraste"
+    }
+  },
+  "uploader": {
+    "dragText": "Glissez-déposez les fichiers vidéo ici",
+    "orText": "ou",
+    "browseText": "Parcourir les fichiers",
+    "acceptedFiles": "Nombreux formats vidéo pris en charge",
+    "maxSize": "Taille maximale du fichier : 2 Go"
+  },
+  "processor": {
+    "currentVideo": "Vidéo actuelle",
+    "reset": "Retour à la sélection",
+    "promptLabel": "Décrivez comment vous souhaitez traiter la vidéo",
+    "promptPlaceholder": "Exemple : couper les 10 premières secondes, ajuster la résolution à 1080p",
+    "promptTip": "Conseil : Vous pouvez fournir des paramètres spécifiques comme la durée de la vidéo, la résolution, etc.",
+    "generating": "Génération de la commande...",
+    "generateCommand": "Générer la commande",
+    "generatedCommand": "Commande générée",
+    "clear": "Effacer",
+    "commandDescription": "Description de la commande",
+    "processing": "Traitement en cours...",
+    "startProcessing": "Démarrer le traitement",
+    "progress": "Progression du traitement",
+    "completed": "Traitement terminé",
+    "downloadProcessed": "Télécharger la vidéo traitée",
+    "errors": {
+      "generateFailed": "Échec de la génération de la commande",
+      "processingFailed": "Échec du traitement de la vidéo",
+      "error": "Une erreur s'est produite"
+    }
+  }
+}
