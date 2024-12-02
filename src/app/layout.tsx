@@ -11,7 +11,7 @@ const InstallPWA = dynamic(() => import('./components/InstallPWA'), {
 });
 
 export const metadata: Metadata = {
-  title: 'AI-FFmpeg | 免费在线视频处理工具 - 视频压缩、转换、倍速',
+  title: 'AI FFmpeg Online · Simple Online Audio/Video Processing Tool',
   description: '免费在线视频处理工具，支持视频压缩、倍速播放、格式转换等功能。无需上传到服务器，完全本地处理保护隐私。通过AI自然语言对话，轻松处理视频，无需学习复杂命令。Free online video processing tool with compression, speed adjustment, and format conversion. Process locally for privacy.',
   manifest: '/manifest.json',
   themeColor: '#000000',
@@ -21,18 +21,7 @@ export const metadata: Metadata = {
     title: 'AI-FFmpeg',
   },
   keywords: [
-    // 中文关键词
-    '在线视频处理',
-    '免费视频压缩',
-    '视频倍速转换',
-    '视频格式转换',
-    '视频剪辑',
-    '视频合并',
-    '提取视频音频',
-    '本地视频处理',
-    'AI视频处理',
-    '视频压缩工具',
-    // 英文关键词
+    // English keywords
     'online video processing',
     'free video compression',
     'video speed converter',
@@ -42,7 +31,29 @@ export const metadata: Metadata = {
     'extract audio',
     'local video processing',
     'AI video processing',
-    'video compression tool'
+    'video compression tool',
+    // Japanese keywords
+    'オンライン動画処理',
+    '無料動画圧縮',
+    '動画速度変換',
+    '動画フォーマット変換',
+    '動画編集',
+    '動画結合',
+    '音声抽出',
+    'ローカル処理',
+    'AI動画処理',
+    '動画圧縮ツール',
+    // French keywords
+    'traitement vidéo en ligne',
+    'compression vidéo gratuite',
+    'convertisseur de vitesse vidéo',
+    'convertisseur de format vidéo',
+    'éditeur vidéo',
+    'fusionner des vidéos',
+    'extraction audio',
+    'traitement vidéo local',
+    'traitement vidéo IA',
+    'outil de compression vidéo'
   ],
   authors: [{ name: 'woniu9524' }],
   openGraph: {
@@ -79,6 +90,8 @@ export const metadata: Metadata = {
     languages: {
       'en-US': 'https://ffmpeg-online.top/en',
       'zh-CN': 'https://ffmpeg-online.top',
+      'ja-JP': 'https://ffmpeg-online.top/ja',
+      'fr-FR': 'https://ffmpeg-online.top/fr',
     },
   },
   other: {

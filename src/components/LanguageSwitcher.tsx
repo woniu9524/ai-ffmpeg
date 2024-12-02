@@ -13,7 +13,9 @@ export function LanguageSwitcher() {
 
   const languages = [
     { code: 'en', name: 'English' },
-    { code: 'zh', name: '中文' }
+    { code: 'zh', name: '中文' },
+    { code: 'ja', name: '日本語' },
+    { code: 'fr', name: 'Français' }
   ];
 
   useEffect(() => {
