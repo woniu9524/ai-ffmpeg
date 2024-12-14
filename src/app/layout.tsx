@@ -11,16 +11,22 @@ const InstallPWA = dynamic(() => import('./components/InstallPWA'), {
 });
 
 export const metadata: Metadata = {
-  title: 'AI FFmpeg Online · Simple Online Audio/Video Processing Tool',
-  description: '免费在线视频处理工具，支持视频压缩、倍速播放、格式转换等功能。无需上传到服务器，完全本地处理保护隐私。通过AI自然语言对话，轻松处理视频，无需学习复杂命令。Free online video processing tool with compression, speed adjustment, and format conversion. Process locally for privacy.',
+  title: 'FFmpeg Online - Free Online Video Processing Tool with AI | AI-FFmpeg',
+  description: 'FFmpeg Online - Free online video processing tool powered by FFmpeg. Convert, compress, edit videos online with AI assistance. No upload needed, process locally with FFmpeg commands through natural language. Support video compression, speed adjustment, format conversion, and more.',
   manifest: '/manifest.json',
   themeColor: '#000000',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'AI-FFmpeg',
+    title: 'FFmpeg Online',
   },
   keywords: [
+    // Primary keywords
+    'ffmpeg online',
+    'online ffmpeg',
+    'ffmpeg web',
+    'ffmpeg converter online',
+    'ffmpeg video processing online',
     // English keywords
     'online video processing',
     'free video compression',
@@ -32,7 +38,10 @@ export const metadata: Metadata = {
     'local video processing',
     'AI video processing',
     'video compression tool',
+    'ffmpeg commands',
+    'ffmpeg gui online',
     // Japanese keywords
+    'オンラインFFmpeg',
     'オンライン動画処理',
     '無料動画圧縮',
     '動画速度変換',
@@ -44,6 +53,7 @@ export const metadata: Metadata = {
     'AI動画処理',
     '動画圧縮ツール',
     // French keywords
+    'ffmpeg en ligne',
     'traitement vidéo en ligne',
     'compression vidéo gratuite',
     'convertisseur de vitesse vidéo',
@@ -57,15 +67,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'woniu9524' }],
   openGraph: {
-    title: 'AI-FFmpeg | Free Online Video Processing Tool',
-    description: 'Free online video processing tool with compression, speed adjustment, and format conversion. Process locally for privacy.',
+    title: 'FFmpeg Online - Free Video Processing Tool with AI',
+    description: 'Use FFmpeg online to process your videos. Free online video processing tool with compression, speed adjustment, and format conversion. Process locally with FFmpeg for privacy.',
     url: 'https://ffmpeg-online.top',
-    siteName: 'AI-FFmpeg',
+    siteName: 'FFmpeg Online',
     images: [
       {
         url: '/logo.png',
         width: 200,
         height: 200,
+        alt: 'FFmpeg Online Logo'
       }
     ],
     locale: 'zh_CN',
